@@ -16,3 +16,27 @@ for tc in range(1, T+1):
     
     ans = selection_sort(arr, N)
     print(f'#{tc}', *ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

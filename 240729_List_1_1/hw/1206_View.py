@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 # solution 1
 T = 10
 

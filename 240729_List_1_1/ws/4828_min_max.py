@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 # for문 두개로 나타내기
 T = int(input())
 
