@@ -16,10 +16,3 @@ for _ in range(T):
             cnt += 1
 
     print(f'#{tc} {cnt}')
-
-
-for i in range(N-M+1):
-    for j in range(M):
-        if t[i+j] != p[j]:
-            break
-
