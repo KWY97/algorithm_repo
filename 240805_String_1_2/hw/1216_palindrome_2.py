@@ -12,6 +12,8 @@ N = len(arr)
 v_list = ['A', 'B', 'C']
 idx_list = [] # A, B, C의 인덱스를 [], [], []로 받을 바깥 리스트
 
+[[0,3,6,8], [1,2,7], [4,5]]
+
 for x in v_list:
     temp_list = [] # A, B, C의 인덱스를 담을 리스트
     for i in range(N):
