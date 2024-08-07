@@ -20,6 +20,3 @@ for tc in range(1, T+1):
     my_str = input()
     ans = check_match(my_str)
     print(f'#{tc} {ans}')
-
-s = words
-char = elem
