@@ -14,13 +14,11 @@ def my_dfs(V, s = 1): # s: 시작정점, V: 정점의 개수
                 ans.append(np) # 정답 리스트에 추가
                 break # for np문 break, 바뀐 sp부터 다시 탐색
         else: # break 되지 않고 if 문을 통과 했다면 (모두 방문 했다면)
-            if len(stack) != 0: # 빈스택이 아니라면
+            if stack: # 빈스택이 아니라면
                 sp = stack.pop() # 시작점을 되돌아감
             else: # 빈스택 이라면 (방문하지 않은 곳도 없고 빈스택이면 모두 탐색했다는 말)
                 break # while True문 break
-
     return ans
-
 
 T = 1
 for tc in range(1, T+1):

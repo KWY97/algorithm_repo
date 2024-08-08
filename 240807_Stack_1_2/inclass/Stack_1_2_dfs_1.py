@@ -37,7 +37,6 @@ T = int(input())
 for tc in range(1, T+1):
     V, E = map(int, input().split())
     adjL = [[] for _ in range(V+1)] #adjL[V]에 V에 인접인 정점을 넣어야 하기에 range(V+1)
-    # 여기부터 다시 봐야할 듯
     arr = list(map(int, input().split()))
     for i in range(E):
         v1, v2 = arr[i*2], arr[i*2+1]
