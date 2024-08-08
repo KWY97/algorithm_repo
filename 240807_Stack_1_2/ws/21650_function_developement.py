@@ -36,11 +36,11 @@ def solution(progresses, speeds):
 #     # 각 작업이 완료되기까지 남은 일수를 계산하여 리스트에 저장
 #     day_list = [math.ceil((100 - progresses[i]) / speeds[i]) for i in range(len(progresses))]
 #     # math.ceil은 소수점 있으면 올림하는 것
-
+#
 #     ans_list = []
 #     max_day = day_list[0]  # 첫 번째 작업의 완료 일수를 max_day로 설정
 #     cnt = 1  # 첫 번째 작업은 무조건 첫 배포에 포함되므로 1로 초기화
-
+#
 #     for i in range(1, len(day_list)):
 #         if day_list[i] <= max_day:
 #             cnt += 1  # 현재 배포 그룹에 포함시키기 위해 cnt 증가
@@ -48,7 +48,7 @@ def solution(progresses, speeds):
 #             ans_list.append(cnt)  # 현재 배포 그룹의 작업 수를 ans_list에 추가
 #             cnt = 1  # 새로운 배포 그룹의 작업 수를 세기 위해 1로 초기화
 #             max_day = day_list[i]  # max_day를 현재 작업의 완료 일수로 갱신
-    
+#
 #     ans_list.append(cnt)  # 마지막 배포 그룹의 작업 수를 추가
-    
+#
 #     return ans_list

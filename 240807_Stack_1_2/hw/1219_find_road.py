@@ -1,5 +1,13 @@
 # A: 0, B: 99로 고정
 
+def my_dfs(V, s = 0): # s: 시작정점, V: 정점의 개수
+    visited = [0] * 100
+    visited[s] = 1
+
+
+
+
+
 T = 10
 for _ in range(T):
     tc, E = map(int, input().split()) # E: 간선의 개수
@@ -9,4 +17,4 @@ for _ in range(T):
         v1, v2 = arr[i*2], arr[i*2+1]
         adjL[v1].append(v2)
         adjL[v2].append(v1)
-        
+    sort_adjL = [sorted(row) for row in adjL]

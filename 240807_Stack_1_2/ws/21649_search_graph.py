@@ -1,4 +1,4 @@
-def my_dfs(s, V): # s: 시작정점, V: 정점의 개수
+def my_dfs(V, s = 1): # s: 시작정점, V: 정점의 개수
     visited = [0] * (V+1) # 방문 여부 표시를 위한 리스트, 방문하면 해당 정점과 같은 숫자의 인덱스에 1 할당
     stack = []
     visited[s] = 1 # 가장 먼저 시작정점을 방문 했으니 1
@@ -6,11 +6,11 @@ def my_dfs(s, V): # s: 시작정점, V: 정점의 개수
     ans = [s] # 경로 순서대로 정점을 담을 리스트, 처음 시작은 s이니 s를 할당
 
     while True:
-        for np in adjL[sp]: # sp(start point)에 인접한 np(next point)가 있으면
+        for np in sort_adjL[sp]: # sp(start point)에 인접한 np(next point)가 있으면
             if visited[np] == 0: # 방문하지 않았다면
                 stack.append(sp)
                 sp = np
-                visited[np] = 1 # np 대신 sp 넣어도 문법적으로는 될 것 같은데 확인해보기
+                visited[np] = 1
                 ans.append(np) # 정답 리스트에 추가
                 break # for np문 break, 바뀐 sp부터 다시 탐색
         else: # break 되지 않고 if 문을 통과 했다면 (모두 방문 했다면)
@@ -31,4 +31,5 @@ for tc in range(1, T+1):
         v1, v2 = arr[i*2], arr[i*2+1]
         adjL[v1].append(v2)
         adjL[v2].append(v1)
-    print(f'#{tc} {"-".join(map(str, my_dfs(1, V)))}')
+    sort_adjL = [sorted(row) for row in adjL]
+    print(f'#{tc} {"-".join(map(str, my_dfs(V)))}')
