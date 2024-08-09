@@ -5,25 +5,24 @@ def my_dfs(s, V):
     visited[sp] == 1
 
     while True:
-        for np in adjL[sp]:
-            if visited[np] == 0:
+        for x in adjL[sp]:
+            if x == end:
+                return 1 # 함수 종료
+            if visited[x] == 0:
                 stack.append(sp)
-                sp = np
-                visited[np] == 1
-                break # for np문에 걸림
-        else:
-            if stack:
+                sp = x
+                visited[x] = 1
+                break # for x문 종료
+        else: # 방문할 곳이 없다면
+            if stack: # 빈 스택이 아니라면
                 sp = stack.pop()
-            else:  
-                break # while문에 걸림
-        if sp == end:
-            return 1
-    return 0
+            else: # 방문할 곳이 없고, 빈 스택이라면 모두 방문했다는 것
+                return 0
 
 T = int(input())
 
 for tc in range(1, T+1):
-    V, E = map(int, input().split())
+    V, E = map(int, input().split()) # V: 노드의 개수, E: 간선의 개수
 
     edge = [] # 간선들의 번호를 담을 리스트
     for _ in range(E):
@@ -35,7 +34,6 @@ for tc in range(1, T+1):
     for i in range(E):
         v1, v2 = edge[i*2], edge[i*2+1]
         adjL[v1].append(v2)
-        adjL[v2].append(v1)
 
     start, end = map(int, input().split()) # 출발 정점, 도착 정점
 
