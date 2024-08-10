@@ -29,8 +29,16 @@ def f(i, N): # 크기 N인 배열인 arr의 i번째 인덱스부터 끝까지 �
     else:
         print(arr[i])
         f(i+1, N)
+        return # 함수 마지막의 return은 생략해도된다함
+    
+''' 위랑 똑같은 것임 좀 축약해 나타낸 것 
+def f(i, N): # 크기 N인 배열인 arr의 i번째 인덱스부터 끝까지 나타내는 함수/ i에 0 넣으면 모든 배열 원소 접근
+    if i == N: # 배열을 벗어난 경우
         return
-
+    print(arr[i])
+    f(i+1, N)
+'''
+    
 f(0,N)
 
 
