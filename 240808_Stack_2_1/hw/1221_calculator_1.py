@@ -24,7 +24,6 @@ for tc in range(1, T+1):
         ans.append(stack.pop())
 
     stack_2 = []
-    ans_2 = []
     for token_2 in ans: # 91+2+3+1
         if token_2 in num:
             stack_2.append(token_2)

@@ -8,7 +8,7 @@ for _ in range(10):  # 10개의 테스트 케이스
     SIZE, START, END = 100, 0, 99
     result = 0
 
-    def dfs(vertex, visited):
+    def dfs(vertex, visited): # 시작점 vertax, 방문표시 배열 visited
         global result
 
         if vertex == END:

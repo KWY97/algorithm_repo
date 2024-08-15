@@ -1,24 +1,11 @@
-강혜경[부울경_1반]
-오후
-5: 23
-11
-0
-1
-0
-1
-0
-0
-0
-1
-1
-0
-0
-4
-1
-2
-2
-5
-1
-3
-2
-4
+T = 2
+
+for tc in range(1, T + 1):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            if i > j:
+                arr[i][j], arr[j][i] = arr[j][i], arr[i][j]
+    print(arr)
