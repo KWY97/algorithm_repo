@@ -1,16 +1,22 @@
-def left_shift(arr, n):
-    new_arr = [None for _ in range(len(arr))]
-    for i in range(len(arr)):
-        new_arr[i-n] = arr[i]
-    return new_arr
+def Omok(N):
+    for i in range(N):
+        for j in range(N):
+            for k in range(4):
+                cnt = 0
+                ni, nj = i, j
 
-def right_shifr(arr, n):
-    new_arr = [None for _ in range(arr)]
-    for i in range(len(arr)):
-        new_arr[i] = arr[i-n]
-    return new_arr
+                while 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'o':
+                    cnt += 1
+                    if cnt == 5:
+                        return 'YES'
+                    ni += dxy[k][0]
+                    nj += dxy[k][1]
+    return 'NO'
 
-arr = [1, 2, 3, 4, 5]
+dxy = [[0, 1], [1, 1], [1, 0], [1, -1]]
 
-ans = left_shift(arr, 1)
-print(ans)
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    arr = [list(input()) for _ in range(N)]
+    print(f'#{tc} {Omok(N)}')

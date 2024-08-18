@@ -26,4 +26,34 @@ for tc in range(1, T+1):
             
     print(f'#{tc}')
     for x in arr:
-        print(*x) 
+        print(*x)
+
+# # sol_2 - 다시 푼 것
+# dxy = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+#
+# T = int(input())
+# for tc in range(1, T + 1):
+#     N = int(input())
+#     arr = [[0] * N for _ in range(N)]
+#     num = 1
+#     i, j = 0, 0
+#     arr[i][j] = num
+#     direction = 0
+#
+#     while num < N ** 2:
+#         nx = i + dxy[direction][0]
+#         ny = j + dxy[direction][1]
+#
+#         if nx < 0 or ny < 0 or nx >= N or ny >= N or arr[nx][ny] != 0:
+#             direction = (direction + 1) % 4
+#             continue
+#
+#         num += 1
+#         arr[nx][ny] = num
+#         i, j = nx, ny
+#
+#     print(f'#{tc}')
+#     for i in range(N):
+#         for j in range(N):
+#             print(arr[i][j], end=' ')
+#         print()
