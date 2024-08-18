@@ -1,10 +1,11 @@
 # # 온라인 강사님 sol 보고 푼 내 풀이
-# def concave(N):
+# def Omok(N):
 #     for i in range(N):
 #         for j in range(N):
-#             for k in range(4): # 4개의 방향
+#             for k in range(4):
 #                 cnt = 0
-#                 ni, nj = i, j # 현재 위치부터 돌인지 판단
+#                 ni, nj = i, j
+#
 #                 while 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'o':
 #                     cnt += 1
 #                     if cnt == 5:
@@ -18,9 +19,8 @@
 # T = int(input())
 # for tc in range(1, T+1):
 #     N = int(input())
-#     arr = [input() for _ in range(N)]
-#     ans = concave(N)
-#     print(f'#{tc} {ans}')
+#     arr = [list(input()) for _ in range(N)]
+#     print(f'#{tc} {Omok(N)}')
 
 
 # sol_2 - 나의 고집대로 푼 풀이
