@@ -1,3 +1,4 @@
+# sol_1
 T = int(input()) # 노선 수
 
 for tc in range(1, T+1):
@@ -16,3 +17,25 @@ for tc in range(1, T+1):
             charge_cnt = 0
             break # while문을 종료
     print(f'#{tc} {charge_cnt}')
+
+
+# sol_2
+def bus(K, N):
+    now = cnt = 0
+    while now + K < N:
+        for move in range(K, 0, -1):
+            if now + move in charge:
+                now += move
+                cnt += 1
+                break # for move 문
+        else: # break 안걸렸을 시
+            return 0
+    return cnt
+
+
+T = int(input())
+
+for tc in range(1, T+1):
+    K, N, M = map(int, input().split())
+    charge = list(map(int, input().split()))
+    print(f'#{tc} {bus(K, N)}')
