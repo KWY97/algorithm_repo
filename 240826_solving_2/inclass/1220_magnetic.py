@@ -9,8 +9,9 @@
 
 
 # 강사님 Sol
-N_pole = 1
 S_pole = 2
+N_pole = 1
+
 
 T = 10
 for tc in range(1, T+1):
