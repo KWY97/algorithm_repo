@@ -21,6 +21,6 @@ for tc in range(1, int(input())+1):
 
     while N//2 > 0:
         sum += h[N//2]
-        N = N//2
+        N //= 2
 
     print(f'{tc} {sum}')
