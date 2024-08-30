@@ -18,7 +18,7 @@ def find_maze(start_x, start_y): # 시작좌표
             if arr[nx][ny] == 3:
                 return 1
 
-            if arr[nx][ny] != 0:
+            if arr[nx][ny] == 0:
                 continue
 
             if visited[nx][ny] != 0:
