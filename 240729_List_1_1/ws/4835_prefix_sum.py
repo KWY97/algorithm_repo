@@ -40,3 +40,17 @@ for tc in range(1, T+1):
     # answer = max_value - min_value
     # print(answer)
 
+
+# 8월 말의 내 풀이
+# T = int(input())
+# for tc in range(1, T+1):
+#     N, M = map(int, input().split())
+#     arr = list(map(int, input().split()))
+#     max_v = float('-inf')
+#     min_v = float('inf')
+#     for i in range(N-M+1):
+#         sum = 0
+#         for j in range(M): sum += arr[i+j]
+#         if max_v < sum: max_v = sum
+#         if min_v > sum: min_v = sum
+#     print(f'#{tc} {max_v - min_v}')

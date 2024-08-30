@@ -1,41 +1,16 @@
-def find_start():
-    for i in range(size):
-        for j in range(size):
-            if arr[i][j] == '2':
-                return i, j
+def make_tree(n):
+    global num
+    if n <= N:
+        make_tree(2*n)
+        tree[n] = num
+        num += 1
+        make_tree(2*n+1)
+    return tree
 
-def search_road(st_x, st_y):
-    visited = [[0] * (size) for _ in range(size)]
-    stack = []
-
-    x, y = st_x, st_y
-    visited[x][y] = 1
-
-    while True:
-        for dx, dy in dxy:
-            nx = x + dx
-            ny = y + dy
-
-            if nx < 0 or ny < 0 or nx >= size or ny >= size or visited[nx][ny] == 1 or arr[nx][ny] == 1:
-                continue
-            if arr[nx][ny] == 3:
-                return 1
-
-
-
-
-
-
-
-
-size = 16
-dxy = [[0, 1], [1, 0], [0, -1], [-1, 0]]
-
-for _ in range(1, 11):
-    tc = int(input())
-    arr = [[input()] for _ in range(size)]
-    start_x, start_y = find_start()
-    search_road(start_x, start_y)
-
-
-
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    num = 1
+    tree = [0] * (N+1)
+    ans = make_tree(1)
+    print(f'#{tc} {ans[1]} {ans[N//2]}')

@@ -6,7 +6,6 @@ def check_duplicate(in_str):
             return check_duplicate(update_str)
     return len(in_str)
 
-
 T = int(input())
 
 for tc in range(1, T+1):
