@@ -1,41 +1,35 @@
+import sys
 from collections import deque
 
-def search_start():
-# 시작점 찾기
-    for i in range(N):
-        for j in range(N):
-            if arr[i][j] == 2:
-                return i, j
-
-def my_bfs(i, j):
-    queue.append([i, j])
-    visited[i][j] = 1
+def my_bfs(s):
+    global num
+    queue.append(s)
+    visited[s] = num
+    num += 1
 
     while queue:
-        x, y = queue.popleft()
+        n = queue.popleft()
 
-        if arr[x][y] == 3:
-            return 1
+        for next in adjL[n]:
+            if visited[next] == 0:
+                queue.append(next)
+                visited[next] = num
+                num += 1
 
-        for dx, dy in dxy:
-            nx = x + dx
-            ny = y + dy
+N, M, R = map(int, sys.stdin.readline(). split())
+adjL = [[] for _ in range(N + 1)]
+queue = deque()
+visited = [0] * (N + 1)
+num = 1
 
-            if nx < 0 or ny < 0 or nx >= N or ny >= N or visited[nx][ny] == 1 or arr[nx][ny] == 1:
-                continue
+for _ in range(M):
+    u, v = map(int, input().split())
+    adjL[u].append(v)
+    adjL[v].append(u)
 
-            queue.append([nx, ny])
-            visited[nx][ny] = 1
-    return 0
+for i in range(N + 1):
+    adjL[i].sort()
 
-
-T = 10
-N = 16
-dxy = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-for _ in range(T):
-    tc = int(input())
-    arr = [list(map(int, input())) for _ in range(N)]
-    si, sj = search_start()
-    queue = deque()
-    visited = [[0] * (N) for _ in range(N)]
-    print(f'#{tc} {my_bfs(si, sj)}')
+my_bfs(R)
+for v in range(1, N+1):
+    print(visited[v])

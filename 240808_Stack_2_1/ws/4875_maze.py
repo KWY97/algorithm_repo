@@ -85,6 +85,42 @@ for tc in range(1, T+1):
 #             start_j = j
 #
 #     print(f'#{tc} {dfs2(start_i, start_j)}')
+#
+#
+# # dfs - if 거냐 안거냐 차이.. 모르겠음 질문 필요
+# def set_start(arr):
+#     for i in range(len(arr)):
+#         for j in range(len(arr)):
+#             if arr[i][j] == 2:
+#                 return [i, j]
+#
+# def my_dfs(i, j):
+#     # 방문 처리
+#     visited[i][j] = 1
+#
+#     if maze[i][j] == 3:
+#         return 1
+#
+#     else:
+#         for dx, dy in [0, 1], [1, 0], [0, -1], [-1, 0]:
+#             nx, ny = i + dx, j + dy
+#
+#             if 0 <= nx < size and 0 <= ny < size and maze[nx][ny] != 1 and visited[nx][ny] == 0:
+#                 if my_dfs(nx, ny):
+#                     return 1
+#         return 0
+#
+# T = 10
+# size = 16
+#
+# for _ in range(T):
+#     tc = int(input())
+#     maze = [list(map(int, input())) for _ in range(size)]
+#     visited = [[0] * size for _ in range(size)]
+#     # 시작점 설정
+#     start_i, start_j = set_start(maze)[0], set_start(maze)[1]
+#
+#     print(f'#{tc} {my_dfs(start_i, start_j)}')
 
 
 
