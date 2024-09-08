@@ -52,3 +52,78 @@ for tc in range(1, T+1):
             start_j = j
 
     print(f'#{tc} {find_maze(start_i, start_j)}')
+
+# sol_2 - dfs
+# def dfs2(i, j):
+#     global result
+#     visited[i][j] = 1
+#     if arr[i][j] == 3:
+#         result = 1
+#         return result
+#     else:
+#         for dx, dy in [0, 1], [1, 0], [0, -1], [-1, 0]:
+#             nx, ny = i + dx, j + dy
+#             if 0 <= nx < N and 0 <= ny < N and arr[nx][ny] != 1 and visited[nx][ny] == 0:
+#                 dfs2(nx, ny)
+#     return result
+#
+#
+# T = int(input())
+#
+# for tc in range(1, T+1):
+#     N = int(input())
+#     arr = [list(map(int, input())) for _ in range(N)]
+#     visited = [[0] * N for _ in range(N)]
+#     result = 0
+#
+#     # 시작점 찾기
+#     for i in range(N):
+#         for j in range(N):
+#             if arr[i][j] != 2:
+#                 continue
+#             start_i = i
+#             start_j = j
+#
+#     print(f'#{tc} {dfs2(start_i, start_j)}')
+
+
+
+# sol_3 - bfs
+# from collections import deque
+#
+# def search_start():
+#     for i in range(N):
+#         for j in range(N):
+#             if arr[i][j] == 2:
+#                 return i, j
+#
+# def my_bfs(i, j):
+#     queue = deque()
+#     queue.append([i, j])
+#     visited[i][j] = 1
+#
+#     while queue: # 큐가 비지 않은 동안
+#         x, y = queue.popleft()
+#         if arr[x][y] == 3:
+#             return 1
+#         for dx, dy in dxy:
+#             nx = x + dx
+#             ny = y + dy
+#
+#             if nx < 0 or ny < 0 or nx >= N or ny >= N or visited[nx][ny] == 1 or arr[nx][ny] == 1:
+#                 continue
+#
+#             queue.append([nx, ny])
+#             visited[nx][ny] = 1
+#     return 0
+#
+#
+# dxy = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+#
+# T = int(input())
+# for tc in range(1,T+1):
+#     N = int(input())
+#     arr = [list(map(int, input())) for _ in range(N)]
+#     start_i, start_j = search_start()
+#     visited = [[0] * N for _ in range(N)]
+#     print(f'#{tc} {my_bfs(start_i, start_j)}')
