@@ -16,7 +16,7 @@ def dfs(x, y, cnt):
         nx, ny = x + dx, y + dy
 
         # 범위 벗어났따면 안댐
-        if nx > 0 or ny > 0 or nx >= N or ny >= M: continue
+        if nx < 0 or ny < 0 or nx >= N or ny >= M: continue
         # 방문 했다면 안댐
         if visited[nx][ny]: continue
         # 도로가 아니면 안댐

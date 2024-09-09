@@ -11,7 +11,6 @@ for tc in range(1, T + 1):
             if arr[i][j] == 1:
                 row_count += 1
             else: # arr[i][j]이 0일 때
-
                 if row_count == K:
                     count += 1
                 row_count = 0

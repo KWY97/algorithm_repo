@@ -24,7 +24,7 @@ def get_road_move_time(road, n, m):
             nx, ny = x + dx, y + dy
 
             # 범위 벗어나면 안댐
-            if nx > 0 or ny > 0 or nx >= n or ny >= m: continue
+            if nx < 0 or ny < 0 or nx >= n or ny >= m: continue
             # 도로가 아니면 안댐
             if road[nx][ny] == 0: continue
             # 방문한 적 없으면 안댐
