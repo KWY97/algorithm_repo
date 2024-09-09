@@ -1,5 +1,6 @@
 import sys
 from collections import deque
+from pprint import pprint
 
 def search_start():
     for i in range(N):
@@ -37,4 +38,3 @@ for tc in range(1, T+1):
     visited = [[0] * N for _ in range(N)]
     si, sj = search_start()
     print(f'#{tc} {my_bfs(si, sj)}')
-
