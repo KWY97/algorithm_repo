@@ -1,12 +1,31 @@
-# 백준 1193번 하는중
+import sys
+input = sys.stdin.readline
+
 N = int(input())
-bunja = 1
-bunmo = 1
-line = 1
-cnt = 1
+divisor = []
+prime_num = []
+ans = []
 
-while N > line:
-    
-    line += 1
-print(line)
+for i in range(2, N):
+    if N % i == 0:
+        divisor.append(i)
 
+for num in divisor:
+    temp = []
+    for j in range(1, num):
+        if num % j == 0:
+            temp.append(num)
+    if len(temp) == 1:
+        prime_num.append(num)
+
+max_prime = max(prime_num)
+
+while N >= max_prime:
+    for i in prime_num:
+        if N % i == 0:
+            N //= i
+            ans.append(i)
+            break
+
+for i in ans:
+    print(i)
