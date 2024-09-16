@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 N = int(input())
 divisor = []
 prime_num = []
@@ -29,3 +26,5 @@ while N >= max_prime:
 
 for i in ans:
     print(i)
+
+# 잔디 심기용 수정 ㅜ
