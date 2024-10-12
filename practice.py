@@ -1,7 +1,7 @@
 N = int(input())
 divisor = []
 prime_num = []
-ans = []
+my_ans = []
 
 for i in range(2, N):
     if N % i == 0:
@@ -21,10 +21,10 @@ while N >= max_prime:
     for i in prime_num:
         if N % i == 0:
             N //= i
-            ans.append(i)
+            my_ans.append(i)
             break
 
-for i in ans:
+for i in my_ans:
     print(i)
 
-# 잔디 심기용 수정 ㅜ
+# 잔디 심기용 수정 입니다.
