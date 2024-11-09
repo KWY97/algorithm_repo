@@ -1,30 +1,38 @@
-N = int(input())
-divisor = []
-prime_num = []
-my_ans = []
+def word():
+    total_cnt = 0
 
-for i in range(2, N):
-    if N % i == 0:
-        divisor.append(i)
+    # 가로 방향 검사
+    for i in range(N):
+        current_cnt = 0
+        for j in range(N):
+            if arr[i][j] == 1:
+                current_cnt += 1
+            else:
+                current_cnt = 0
 
-for num in divisor:
-    temp = []
-    for j in range(1, num):
-        if num % j == 0:
-            temp.append(num)
-    if len(temp) == 1:
-        prime_num.append(num)
+            if current_cnt == K and arr[i][j+1] == 0:
+                total_cnt += 1
 
-max_prime = max(prime_num)
+    # 세로 방향 검사
+    for i in range(N):
+        current_cnt = 0
+        for j in range(N):
+            if arr[j][i] == 1:
+                current_cnt += 1
+            else:
+                current_cnt = 0
 
-while N >= max_prime:
-    for i in prime_num:
-        if N % i == 0:
-            N //= i
-            my_ans.append(i)
-            break
+            if current_cnt == K and arr[j+1][i] == 0:
+                total_cnt += 1
 
-for i in my_ans:
-    print(i)
+    return total_cnt
+                    
 
-# 잔디 심기용 수정 입니다.
+T = int(input())
+
+for tc in range(1, T+1):
+    N, K = map(int, input().split())
+    arr = [list(map(int, input().split())) + [0] for _ in range(N)] + [[0] * (N+1)]
+    
+    ans = word()
+    print(f'#{tc} {ans}')
